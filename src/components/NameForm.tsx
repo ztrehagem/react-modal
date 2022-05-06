@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
 export interface Props {
-  onSubmit: (name: string) => void;
+  onSubmit?: (name: string) => void;
 }
 
 export const NameForm = (props: Props): JSX.Element => {
@@ -9,7 +9,7 @@ export const NameForm = (props: Props): JSX.Element => {
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.onSubmit(name);
+    props.onSubmit?.(name);
   };
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
