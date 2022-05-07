@@ -23,7 +23,7 @@ export default defineConfig(({ command, mode }) => {
           },
 
           rollupOptions: {
-            external: ["react"],
+            external: ["react", "react-transition-group", "recoil"],
           },
         }
       : {
