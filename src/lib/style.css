@@ -1,0 +1,51 @@
+.zrm-modal {
+  overflow: auto;
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  transition: 300ms ease;
+  transition-property: transform, opacity;
+}
+
+.zrm-modal:not(.zrm-t-enter, .zrm-t-enter-done, .zrm-t-exit) {
+  display: none;
+}
+
+.zrm-modal:is(.zrm-t-enter) {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.zrm-modal:is(.zrm-t-enter-active, .zrm-t-enter-done, .zrm-t-exit) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zrm-modal:is(.zrm-t-exit-active, .zrm-t-exit-done),
+.zrm-modal:not(:last-child) {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.zrm-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 300ms ease opacity;
+}
+
+.zrm-backdrop:not(.zrm-t-enter, .zrm-t-enter-done, .zrm-t-exit) {
+  display: none;
+}
+
+.zrm-backdrop:is(.zrm-t-enter) {
+  opacity: 0;
+}
+
+.zrm-backdrop:is(.zrm-t-enter-active, .zrm-t-enter-done, .zrm-t-exit) {
+  opacity: 1;
+}
+
+.zrm-backdrop:is(.zrm-t-exit-active, .zrm-t-exit-done) {
+  opacity: 0;
+}

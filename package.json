@@ -1,10 +1,10 @@
 {
-  "name": "@ztrehagem/vue-modal",
+  "name": "@ztrehagem/react-modal",
   "version": "2.0.0-alpha.5",
-  "description": "Stacking-managed styleless modal library for Vue.js.",
+  "description": "Stacking-managed styleless modal library for React.",
   "keywords": [
     "modal",
-    "vue"
+    "react"
   ],
   "author": {
     "email": "shigeki.suwa@ztrehagem.dev",
@@ -12,21 +12,21 @@
     "url": "https://ztrehagem.dev"
   },
   "license": "MIT",
-  "homepage": "https://vue-modal.lib.ztrehagem.dev",
-  "bugs": "https://github.com/ztrehagem/vue-modal/issues",
+  "homepage": "https://react-modal.lib.ztrehagem.dev",
+  "bugs": "https://github.com/ztrehagem/react-modal/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ztrehagem/vue-modal.git"
+    "url": "https://github.com/ztrehagem/react-modal.git"
   },
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/vue-modal.cjs.js",
-  "module": "dist/vue-modal.es.js",
+  "main": "dist/react-modal.cjs.js",
+  "module": "dist/react-modal.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-modal.es.js",
-      "require": "./dist/vue-modal.cjs.js"
+      "import": "./dist/react-modal.es.js",
+      "require": "./dist/react-modal.cjs.js"
     },
     "./style.css": "./dist/style.css"
   },
@@ -47,8 +47,15 @@
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write"
   },
+  "dependencies": {
+    "@types/react-transition-group": "^4.4.4",
+    "react-transition-group": "^4.4.2"
+  },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/types": "^7.17.0",

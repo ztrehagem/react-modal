@@ -12,7 +12,7 @@
     "sourceMap": true,
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "vite.config.ts"],
   "exclude": ["node_modules"]

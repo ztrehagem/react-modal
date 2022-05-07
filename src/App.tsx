@@ -4,10 +4,12 @@ import { MainView } from "./components/MainView";
 
 export const App = (): JSX.Element => {
   return (
-    <React.StrictMode>
+    <div>
+      {/* <React.StrictMode> */}
       <RecoilRoot>
         <MainView />
       </RecoilRoot>
-    </React.StrictMode>
+      {/* </React.StrictMode> */}
+    </div>
   );
 };

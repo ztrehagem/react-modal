@@ -1,8 +1,10 @@
-import { useModalManager, useStackValue } from "../lib/ModalManager";
+import { Backdrop } from "../lib/Backdrop";
+import { useModalManager } from "../lib/ModalManager";
+import { Renderer } from "../lib/Renderer";
+import { HelloModal } from "./HelloModal";
 import { NameForm } from "./NameForm";
 
 export const ModalDemoView = (): JSX.Element => {
-  const stack = useStackValue();
   const modal = useModalManager();
 
   const dismissHandler = () => {
@@ -10,11 +12,13 @@ export const ModalDemoView = (): JSX.Element => {
   };
 
   const submitHandler = (name: string) => {
-    modal.push(<div>{name}</div>);
+    modal.push(<HelloModal name={name} />);
   };
 
   return (
-    <>
+    <section>
+      <h2>Demo</h2>
+
       <NameForm onSubmit={submitHandler} />
 
       <button type="button" onClick={dismissHandler}>
@@ -23,7 +27,9 @@ export const ModalDemoView = (): JSX.Element => {
 
       <hr />
 
-      {stack.map((m) => (<div>{m}</div>))}
-    </>
+      <Backdrop />
+
+      <Renderer />
+    </section>
   );
 };

@@ -23,7 +23,7 @@ export default defineConfig(({ command, mode }) => {
           },
 
           rollupOptions: {
-            external: ["vue"],
+            external: ["react"],
           },
         }
       : {

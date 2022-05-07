@@ -1,23 +1,22 @@
-import React from "react";
+import { ReactElement } from "react";
 import { atom, useRecoilState, useRecoilValue } from "recoil";
 
-type ModalInstance = React.ReactElement
-type ModalStack = ModalInstance[]
+type ModalStack = ReactElement[];
 
 interface ModalManager {
-  push(el: React.ReactElement): void
-  pop(): void
-  flush(): void
+  push(el: ReactElement): void;
+  pop(): void;
+  flush(): void;
 }
 
 const stackState = atom<ModalStack>({
-  key: 'ModalManager::stack',
+  key: "ModalManager::stack",
   default: [],
 });
 
 export const useStackValue = (): ModalStack => {
-  return useRecoilValue(stackState)
-}
+  return useRecoilValue(stackState);
+};
 
 export const useModalManager = (): ModalManager => {
   const [stack, setStack] = useRecoilState(stackState);
@@ -27,4 +26,4 @@ export const useModalManager = (): ModalManager => {
     pop: () => setStack(stack.slice(0, -1)),
     flush: () => setStack([]),
   };
-}
+};
