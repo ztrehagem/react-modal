@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { memo } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useStackValue } from "./ModalManager";
 
-export const Backdrop: FC = () => {
+export const Backdrop = memo(() => {
   const showing = useStackValue().at(0) != null;
 
   return (
@@ -16,4 +16,4 @@ export const Backdrop: FC = () => {
       <div className="zrm-backdrop"></div>
     </CSSTransition>
   );
-};
+});

@@ -1,10 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, memo, useState } from "react";
 
 export interface Props {
   onSubmit?: (name: string) => void;
 }
 
-export const NameForm = (props: Props): JSX.Element => {
+export const NameForm = memo<Props>((props) => {
   const [name, setName] = useState("");
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
@@ -28,4 +28,4 @@ export const NameForm = (props: Props): JSX.Element => {
       <button type="submit">showModal</button>
     </form>
   );
-};
+});

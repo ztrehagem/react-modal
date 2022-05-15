@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { ModalDemoView } from "./ModalDemoView";
 import { PackageInformation } from "./PackageInformation";
 
-export const MainView = (): JSX.Element => {
+export const MainView = memo(() => {
   return (
     <main>
       <PackageInformation />
@@ -9,4 +10,4 @@ export const MainView = (): JSX.Element => {
       <ModalDemoView />
     </main>
   );
-};
+});

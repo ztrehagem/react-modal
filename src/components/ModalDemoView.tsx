@@ -1,10 +1,11 @@
+import { memo } from "react";
 import { Backdrop } from "../lib/Backdrop";
 import { useModalManager } from "../lib/ModalManager";
 import { Renderer } from "../lib/Renderer";
 import { HelloModal } from "./HelloModal";
 import { NameForm } from "./NameForm";
 
-export const ModalDemoView = (): JSX.Element => {
+export const ModalDemoView = memo(() => {
   const modal = useModalManager();
 
   const dismissHandler = () => {
@@ -32,4 +33,4 @@ export const ModalDemoView = (): JSX.Element => {
       <Renderer />
     </section>
   );
-};
+});
