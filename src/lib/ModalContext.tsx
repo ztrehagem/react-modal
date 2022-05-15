@@ -1,10 +1,15 @@
-import { createContext, memo, ReactElement, useState } from "react";
+import { createContext, FC, memo, ReactElement, useState } from "react";
 
-type ModalStack = ReactElement[];
+interface ModalInstance<Props = any> {
+  component: FC<Props>
+  getProps: () => Props
+}
+
+type ModalStack = ModalInstance[];
 
 interface ModalContextValue {
   readonly stack: ModalStack;
-  push(el: ReactElement): void;
+  push<Props>(component: FC<Props>, getProps: () => Props): void;
   pop(): void;
   flush(): void;
 }
@@ -25,7 +30,7 @@ export const ModalContextProvider = memo<ModalContextProps>((props) => {
 
   const value: ModalContextValue = {
     stack,
-    push: (el) => setStack([...stack, el]),
+    push: (component, getProps) => setStack([...stack, { component, getProps }]),
     pop: () => setStack(stack.slice(0, -1)),
     flush: () => setStack([]),
   };

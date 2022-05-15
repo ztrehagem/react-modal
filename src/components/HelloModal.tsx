@@ -17,7 +17,7 @@ export const HelloModal = memo<Props>((props) => {
   };
 
   const submitHandler = (name: string) => {
-    modal.push(<HelloModal name={name} />);
+    modal.push(HelloModal, () => ({ name }));
   };
 
   return (

@@ -7,7 +7,7 @@ export const ModalDemoView = memo(() => {
   const modal = useContext(ModalContext);
 
   const submitHandler = (name: string) => {
-    modal.push(<HelloModal name={name} />);
+    modal.push(HelloModal, () => ({ name }));
   };
 
   return (
