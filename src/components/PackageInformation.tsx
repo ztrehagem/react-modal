@@ -13,10 +13,10 @@ export const PackageInformation: FC = () => {
       <nav>
         <ul>
           <li>
-            <a href="https://github.com/ztrehagem/react-modal">GitHub</a>
+            <a>GitHub</a>
           </li>
           <li>
-            <a href="https://www.npmjs.com/package/@ztrehagem/react-modal">
+            <a>
               npm
             </a>
           </li>
