@@ -1,14 +1,18 @@
 import React from "react";
-import { RecoilRoot } from "recoil";
 import { MainView } from "./components/MainView";
+import { Backdrop } from "./lib/Backdrop";
+import { ModalContextProvider } from "./lib/ModalContext";
+import { Renderer } from "./lib/Renderer";
 
 export const App = (): JSX.Element => {
   return (
     <div>
       {/* <React.StrictMode> */}
-      <RecoilRoot>
+      <ModalContextProvider>
         <MainView />
-      </RecoilRoot>
+        <Backdrop />
+        <Renderer />
+      </ModalContextProvider>
       {/* </React.StrictMode> */}
     </div>
   );

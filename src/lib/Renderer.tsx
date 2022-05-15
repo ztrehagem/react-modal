@@ -1,9 +1,9 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { useStackValue } from "./ModalManager";
+import { ModalContext } from "./ModalContext";
 
 export const Renderer = memo(() => {
-  const stack = useStackValue();
+  const { stack } = useContext(ModalContext);
   const top = stack.at(-1);
 
   return (

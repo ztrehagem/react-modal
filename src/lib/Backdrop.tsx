@@ -1,9 +1,10 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
-import { useStackValue } from "./ModalManager";
+import { ModalContext } from "./ModalContext";
 
 export const Backdrop = memo(() => {
-  const showing = useStackValue().at(0) != null;
+  const { stack } = useContext(ModalContext);
+  const showing = stack.at(0) != null;
 
   return (
     <CSSTransition

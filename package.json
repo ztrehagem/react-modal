@@ -18,8 +18,15 @@
     "@types/react": "^18.0.0",
     "@types/react-transition-group": "^4.4.4",
     "react": "^18.0.0",
-    "react-transition-group": "^4.4.2",
-    "recoil": "^0.7.2"
+    "react-transition-group": "^4.4.2"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-transition-group": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@babel/types": "^7.17.0",
@@ -39,7 +46,6 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-transition-group": "^4.4.2",
-    "recoil": "^0.7.2",
     "typescript": "^4.5.5",
     "vite": "^2.8.1"
   }

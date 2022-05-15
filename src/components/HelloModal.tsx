@@ -1,6 +1,6 @@
-import { memo, MouseEvent, useCallback } from "react";
+import { memo, MouseEvent, useCallback, useContext } from "react";
 import { Modal } from "../lib/Modal";
-import { useModalManager } from "../lib/ModalManager";
+import { ModalContext } from "../lib/ModalContext";
 import { content, root } from "./HelloModal.css";
 import { NameForm } from "./NameForm";
 
@@ -9,7 +9,7 @@ export interface Props {
 }
 
 export const HelloModal = memo<Props>((props) => {
-  const modal = useModalManager();
+  const modal = useContext(ModalContext);
 
   const closeModalHandler = useCallback(
     (e: MouseEvent): void => {
