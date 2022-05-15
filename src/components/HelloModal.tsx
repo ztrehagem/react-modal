@@ -1,4 +1,4 @@
-import { memo, MouseEvent, useCallback, useContext } from "react";
+import { memo, MouseEvent, useContext } from "react";
 import { Modal } from "../lib/Modal";
 import { ModalContext } from "../lib/ModalContext";
 import { content, root } from "./HelloModal.css";
@@ -11,20 +11,14 @@ export interface Props {
 export const HelloModal = memo<Props>((props) => {
   const modal = useContext(ModalContext);
 
-  const closeModalHandler = useCallback(
-    (e: MouseEvent): void => {
-      e.preventDefault();
-      modal.pop();
-    },
-    [modal]
-  );
+  const closeModalHandler = (e: MouseEvent): void => {
+    e.preventDefault();
+    modal.pop();
+  };
 
-  const submitHandler = useCallback(
-    (name: string) => {
-      modal.push(<HelloModal name={name} />);
-    },
-    [modal]
-  );
+  const submitHandler = (name: string) => {
+    modal.push(<HelloModal name={name} />);
+  };
 
   return (
     <Modal>
